@@ -36,7 +36,7 @@ export class TodoDataService {
   }
 
   getTodos(): Todo[] {
-    return this.storage.get<Todo[]>(TODOS_KEY) || [];
+    return this.storage.get(TODOS_KEY) || [];
   }
 
   saveTodos(todos: Todo[]): void {
