@@ -1,3 +1,8 @@
-<p>
-  todo-list works!
-</p>
+<input
+  placeholder="What u gona do?"
+  autofocus=""
+  [(ngModel)]="todoTitle"
+  (keyup.enter)="addTodo()">
+<div *ngFor="let item of service.todos | async">
+  <todo-todo-detail [item]="item" (deleted)="deleteTodo($event.id)"></todo-todo-detail>
+</div>
